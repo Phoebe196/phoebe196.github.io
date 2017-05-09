@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://phoebe196.github.io">
-  <title>Archives: 2017/4 | Pb Blog</title>
+  <title>Vue基础原理篇 | Pb Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Pb Blog">
-<meta property="og:url" content="https://phoebe196.github.io/archives/2017/04/index.html">
+  <meta name="description" content="什么是MVVM框架首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue基础原理篇">
+<meta property="og:url" content="https://phoebe196.github.io/2017/05/04/Vue基础原理篇/index.html">
 <meta property="og:site_name" content="Pb Blog">
+<meta property="og:description" content="什么是MVVM框架首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493908393922&di=1226306ac10b37354d98309859853cb7&imgtype=0&src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493908393925&di=98dca462e385ff0a0acdd79bba95e318&imgtype=0&src=http%3A%2F%2Fwww.th7.cn%2Fd%2Ffile%2Fp%2F2016%2F06%2F27%2F6f4c4c856cad6007bf9fa6da6c370137.jpg">
+<meta property="og:updated_time" content="2017-05-09T09:38:29.617Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pb Blog">
+<meta name="twitter:title" content="Vue基础原理篇">
+<meta name="twitter:description" content="什么是MVVM框架首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493908393922&di=1226306ac10b37354d98309859853cb7&imgtype=0&src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png">
   
     <link rel="alternative" href="/atom.xml" title="Pb Blog" type="application/atom+xml">
   
@@ -135,98 +143,142 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Vue基础原理篇" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/21/作品列表/" class="archive-article-date">
-  	<time datetime="2017-04-21T08:02:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/21/作品列表/">作品列表</a>
+    <h1 class="article-title" itemprop="name">
+      Vue基础原理篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/04/Vue基础原理篇/" class="archive-article-date">
+  	<time datetime="2017-05-04T10:59:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是MVVM框架"><a href="#什么是MVVM框架" class="headerlink" title="什么是MVVM框架"></a>什么是MVVM框架</h2><p>首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM框架，Vue、Angular皆是该模式的框架代表。<br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393922&amp;di=1226306ac10b37354d98309859853cb7&amp;imgtype=0&amp;src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png" alt="MVVM框架"><br>如图所示，MVVM框架是有View（视图）、Model（数据）以及ViewModel（View与Model的连接器）组成。View与Model通过ViewModel实现双向绑定。</p>
+<h2 id="Vue是如何实现双向绑定"><a href="#Vue是如何实现双向绑定" class="headerlink" title="Vue是如何实现双向绑定"></a>Vue是如何实现双向绑定</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393925&amp;di=98dca462e385ff0a0acdd79bba95e318&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.th7.cn%2Fd%2Ffile%2Fp%2F2016%2F06%2F27%2F6f4c4c856cad6007bf9fa6da6c370137.jpg" alt="Vue"><br>在Vue.js的ViewModel中使用directives指令（eg：v-bind，v-text等）对view中的dow进行封装。每一个指令都会对应一个Watcher（观察者）。</p>
+<p>Vue.js源代码中使用的是ES5的Object.defineProperty()方法，在此方法中包含set以及get两个函数，</p>
+<ol>
+<li>当Model中的数据发生改变时=&gt;触发set方法=&gt;watcher观察到变化后进行运算，发现重新运算后的值与指令中的原值不一样=&gt;调用指令中的update()方法更新dom视图数据。</li>
+<li>当用户在页面进行一些操作导致数据发生改变=&gt;watcher同样观察到变化=&gt;触发model中的get方法=&gt;改变数据库数据。</li>
+</ol>
+<h2 id="Vue-router"><a href="#Vue-router" class="headerlink" title="Vue-router"></a>Vue-router</h2><p><a href="https://router.vuejs.org/" target="_blank" rel="external">官方文档</a><br>安装方式：在package.json中的”dependencies”添加依赖，再次在命令行中输入npm install<br>引入：在main.js中import（根据node_model文件夹下router中的name）<br>用过Vue.use(VueRouter)安装插件（路由模块），标签使用<code>&lt;a v-link=&quot;{path:&#39;/路径&#39;}&quot;&gt;&lt;/a&gt;</code>将会自动刷新对应的<code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
+<h2 id="Vue-resource-前后端数据交互插件"><a href="#Vue-resource-前后端数据交互插件" class="headerlink" title="Vue-resource 前后端数据交互插件"></a>Vue-resource 前后端数据交互插件</h2><p><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">官方文档</a><br>写在Vue.js的created()生命周期钩子下，<br>this.$http.get(‘/api/‘).then(response)=&gt;{<br>    成功时的回调函数<br>},(response)=&gt;{<br>成功时的回调函数<br>});</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>要会看官方文档！！！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">demo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue.js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://phoebe196.github.io/2017/05/04/Vue基础原理篇/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/21/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-21T06:00:06.476Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-21</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/21/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2017/05/04/使用vue初建项目/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          使用vue初建项目
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Introduction</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -249,8 +301,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
