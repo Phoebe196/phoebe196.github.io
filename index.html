@@ -137,6 +137,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端基础知识补充" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/09/前端基础知识补充/">前端基础知识补充</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/09/前端基础知识补充/" class="archive-article-date">
+  	<time datetime="2017-05-09T09:51:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HTML篇"><a href="#HTML篇" class="headerlink" title="HTML篇"></a>HTML篇</h2><h4 id="1-HTML语义化的意义："><a href="#1-HTML语义化的意义：" class="headerlink" title="1. HTML语义化的意义："></a>1. HTML语义化的意义：</h4><p>为爬虫考虑提高搜索性，为其他要看代码的人考虑（不要今天只有你和上天看的懂代码，明天只有上帝能看的懂代码），无障碍阅读，更好的维护。</p>
+<h4 id="2-src和href的区别："><a href="#2-src和href的区别：" class="headerlink" title="2. src和href的区别："></a>2. src和href的区别：</h4><p>src是source的缩写，用于指向外部资源，比如文档中的图片，js脚本等资源，并下载应用到文档内，当浏览器解析该元素时，会暂停其他资源的下载和处理，直到该资源下载编译完毕。<br>href是链接网络资源，当浏览器识别该元素后，会并行下载资源并且不会停止对其他资源的处理，所以我们推荐使用link加载css，而不是@import，它不是并行加载文件，会导致页面渲染问题。</p>
+<h2 id="CSS篇"><a href="#CSS篇" class="headerlink" title="CSS篇"></a>CSS篇</h2><h4 id="1-position有哪几种方式，它们之间的区别以及应用场景，跟float有什么区别"><a href="#1-position有哪几种方式，它们之间的区别以及应用场景，跟float有什么区别" class="headerlink" title="1.position有哪几种方式，它们之间的区别以及应用场景，跟float有什么区别"></a>1.position有哪几种方式，它们之间的区别以及应用场景，跟float有什么区别</h4><p>position：static，absolute，relative，fixed<br>float是布局，position是定位，通常比较大块的容器之间（整体框架）的布局用float，容器相对容器里面的定位用position</p>
+<h4 id="2-居中的方法"><a href="#2-居中的方法" class="headerlink" title="2.居中的方法"></a>2.居中的方法</h4><p>水平居中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 父级 --&gt;</div><div class="line">css&#123;display: flex;align-items: center;justify-content: center;&#125;</div><div class="line">&lt;!-- 块级 --&gt;</div><div class="line">css&#123;margin:0 auto&#125;</div><div class="line">&lt;!-- 文本 --&gt;</div><div class="line">&#123;text-align：center&#125;</div></pre></td></tr></table></figure></p>
+<p>垂直居中：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 行级元素 --&gt;</div><div class="line">&#123;line-height：&#125;</div><div class="line">&lt;!-- 图片img内联块级元素 --&gt;</div><div class="line">&#123; vertical-align:middle;&#125;</div><div class="line">&lt;!-- 块级元素 --&gt;</div><div class="line">&#123;position:absolute;top:50% ;left:50%; margin-top: -0.5height; margin-left:-0.5width;&#125;</div><div class="line">&lt;!-- 或者 --&gt;</div><div class="line">&#123; position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin:auto;&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="3-清除浮动"><a href="#3-清除浮动" class="headerlink" title="3.清除浮动"></a>3.清除浮动</h4><p>（1）clear：both空标签-不推荐使用<br>（2）父级加height<br>（3）（最优！！！）父级长度不定时：在父级加：after伪类<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;display:block;clear:both;content:””;visibility:hidden;</div><div class="line">height:0; zoom:1&#125;-让父级div能自动获取到高度zoom适用于ie6/7 推荐使用</div></pre></td></tr></table></figure></p>
+<p>（4）父级div定义 overflow:hidden-必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度 ，不能和position配合使用，因为超出的尺寸的会被隐藏</p>
+        
+          <a class="article-more-a" href="/2017/05/09/前端基础知识补充/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/09/前端基础知识补充/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Vue基础原理篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,15 +234,9 @@
       
         <h2 id="什么是MVVM框架"><a href="#什么是MVVM框架" class="headerlink" title="什么是MVVM框架"></a>什么是MVVM框架</h2><p>首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM框架，Vue、Angular皆是该模式的框架代表。<br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393922&amp;di=1226306ac10b37354d98309859853cb7&amp;imgtype=0&amp;src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png" alt="MVVM框架"><br>如图所示，MVVM框架是有View（视图）、Model（数据）以及ViewModel（View与Model的连接器）组成。View与Model通过ViewModel实现双向绑定。</p>
 <h2 id="Vue是如何实现双向绑定"><a href="#Vue是如何实现双向绑定" class="headerlink" title="Vue是如何实现双向绑定"></a>Vue是如何实现双向绑定</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393925&amp;di=98dca462e385ff0a0acdd79bba95e318&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.th7.cn%2Fd%2Ffile%2Fp%2F2016%2F06%2F27%2F6f4c4c856cad6007bf9fa6da6c370137.jpg" alt="Vue"><br>在Vue.js的ViewModel中使用directives指令（eg：v-bind，v-text等）对view中的dow进行封装。每一个指令都会对应一个Watcher（观察者）。</p>
-<p>Vue.js源代码中使用的是ES5的Object.defineProperty()方法，在此方法中包含set以及get两个函数，</p>
-<ol>
-<li>当Model中的数据发生改变时=&gt;触发set方法=&gt;watcher观察到变化后进行运算，发现重新运算后的值与指令中的原值不一样=&gt;调用指令中的update()方法更新dom视图数据。</li>
-<li>当用户在页面进行一些操作导致数据发生改变=&gt;watcher同样观察到变化=&gt;触发model中的get方法=&gt;改变数据库数据。</li>
-</ol>
-<h2 id="Vue-router"><a href="#Vue-router" class="headerlink" title="Vue-router"></a>Vue-router</h2><p><a href="https://router.vuejs.org/" target="_blank" rel="external">官方文档</a><br>安装方式：在package.json中的”dependencies”添加依赖，再次在命令行中输入npm install<br>引入：在main.js中import（根据node_model文件夹下router中的name）<br>用过Vue.use(VueRouter)安装插件（路由模块），标签使用<code>&lt;a v-link=&quot;{path:&#39;/路径&#39;}&quot;&gt;&lt;/a&gt;</code>将会自动刷新对应的<code>&lt;router-view&gt;&lt;/router-view&gt;</code></p>
-<h2 id="Vue-resource-前后端数据交互插件"><a href="#Vue-resource-前后端数据交互插件" class="headerlink" title="Vue-resource 前后端数据交互插件"></a>Vue-resource 前后端数据交互插件</h2><p><a href="https://github.com/pagekit/vue-resource" target="_blank" rel="external">官方文档</a><br>写在Vue.js的created()生命周期钩子下，<br>this.$http.get(‘/api/‘).then(response)=&gt;{<br>    成功时的回调函数<br>},(response)=&gt;{<br>成功时的回调函数<br>});</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>要会看官方文档！！！</p>
-
+        
+          <a class="article-more-a" href="/2017/05/04/Vue基础原理篇/#more">more >></a>
+        
       
 
       
@@ -225,20 +294,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>本文所有操作都是基于已安装好<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>和<a href="https://git-scm.com/downloads" target="_blank" rel="external">Git命令行</a>的前提下进行的。<br>接触vue框架时间不长，但仍对Vue.js一知半解的，就算看了<a href="https://cn.vuejs.org/v2/guide/" target="_blank" rel="external">官方文档</a>也是千头万绪，无从下手，所以我想在此博客下慢慢梳理自己的学习vue经历和知识点。</p>
+        <p>本文所有操作都是基于已安装好<a href="https://nodejs.org/en/">Node.js</a>和<a href="https://git-scm.com/downloads">Git命令行</a>的前提下进行的。<br>接触vue框架时间不长，但仍对Vue.js一知半解的，就算看了<a href="https://cn.vuejs.org/v2/guide/">官方文档</a>也是千头万绪，无从下手，所以我想在此博客下慢慢梳理自己的学习vue经历和知识点。</p>
 <h2 id="如何创建一个vue项目"><a href="#如何创建一个vue项目" class="headerlink" title="如何创建一个vue项目"></a>如何创建一个vue项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g vue-cli</div></pre></td></tr></table></figure>
 <p>首先使用vue-cli（vue脚手架工具）搭建一个基本的代码结构</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init &lt;template-name&gt; &lt;project-name&gt;</div></pre></td></tr></table></figure>
 <p>比如vue init webpack eleme 用webpack来创立一个项目名为eleme的项目<br>随后会自动跳出一些信息需要Author自己输入，包括：<br>  项目名、项目描述、作者、eslint（代码风格检查器）、eslint preset（风格预设）：standard、Karma+Mocha(单元测试库)：No、e2e test：No</p>
 <p>进入项目目录下后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>安装依赖，可发现目录下多了node_modules文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
-<p>以上命令可运行该初始项目，默认在8080端口启动，在浏览器输入localhost：8080可查看页面。</p>
-<h2 id="Vue-基础知识"><a href="#Vue-基础知识" class="headerlink" title="Vue 基础知识"></a>Vue 基础知识</h2><p>入口文件是index.html，body里有<code>&lt;app&gt;</code>或<code>&lt;div id=”app”&gt;</code> 为vue的组件，入口js为main.js<br>其中用 new Vue已经实例化vue实例，并且el显示挂载到body上<br>每个组件分为三部分：<code>&lt;template&gt;</code>, <code>&lt;script&gt;</code>,<code>&lt;style&gt;</code> </p>
-<h2 id="添加组件的步骤"><a href="#添加组件的步骤" class="headerlink" title="添加组件的步骤"></a>添加组件的步骤</h2><p>在components目录下创建一个vue文件，在<code>&lt;script&gt;</code>用export default导出一个对象<br>在APP.vue里import引用刚刚导出的对象，用components： {注册组件}=&gt;然后再HTML标签引用</p>
-<h2 id="项目文件介绍"><a href="#项目文件介绍" class="headerlink" title="项目文件介绍"></a>项目文件介绍</h2><p>build和config文件夹——webpack打包环境配置相关<br>node_modules——通过npm install 安装的依赖代码库<br>src——存放项目源码<br>static——存放第三方静态资源<br>.babelrc——将es6转为es5的配置<br>package.json——配置文件，依赖等。devdependence表示编译过程中的依赖。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>App.vue大组件可以包含header子组件及各导航组件<br>webpack——当前最火的前端构建工具</p>
-
+<p>安装依赖，可发现目录下多了node_modules文件夹<br>
+        
+          <a class="article-more-a" href="/2017/05/04/使用vue初建项目/#more">more >></a>
+        
       
 
       
@@ -493,15 +558,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">project</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Introduction</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">project</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
             
             <div class="clearfix"></div>

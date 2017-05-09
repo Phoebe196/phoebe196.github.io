@@ -17,7 +17,7 @@
 <meta property="og:description" content="什么是MVVM框架首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493908393922&di=1226306ac10b37354d98309859853cb7&imgtype=0&src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png">
 <meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1493908393925&di=98dca462e385ff0a0acdd79bba95e318&imgtype=0&src=http%3A%2F%2Fwww.th7.cn%2Fd%2Ffile%2Fp%2F2016%2F06%2F27%2F6f4c4c856cad6007bf9fa6da6c370137.jpg">
-<meta property="og:updated_time" content="2017-05-09T09:38:29.617Z">
+<meta property="og:updated_time" content="2017-05-09T10:30:56.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue基础原理篇">
 <meta name="twitter:description" content="什么是MVVM框架首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM">
@@ -165,6 +165,7 @@
       
         <h2 id="什么是MVVM框架"><a href="#什么是MVVM框架" class="headerlink" title="什么是MVVM框架"></a>什么是MVVM框架</h2><p>首先解释下什么是MVC模式，即模型(model)－视图(view)－控制器(controller)的缩写，这也是最常见、最传统的软件架构之一。每次model中data的更新都需要重新刷新加载才能将新数据显示在网页上，但这种模式无疑浪费了很多资源，也增加了很多无意义的http请求，即使使用了Ajax的异步加载方法，任需要一些手动操作才能改变，为了提高效率，目前很多人支持使用MVVM框架，Vue、Angular皆是该模式的框架代表。<br><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393922&amp;di=1226306ac10b37354d98309859853cb7&amp;imgtype=0&amp;src=http%3A%2F%2F7jpreg.com2.z0.glb.clouddn.com%2Fwhat-is-mvvm.png" alt="MVVM框架"><br>如图所示，MVVM框架是有View（视图）、Model（数据）以及ViewModel（View与Model的连接器）组成。View与Model通过ViewModel实现双向绑定。</p>
 <h2 id="Vue是如何实现双向绑定"><a href="#Vue是如何实现双向绑定" class="headerlink" title="Vue是如何实现双向绑定"></a>Vue是如何实现双向绑定</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1493908393925&amp;di=98dca462e385ff0a0acdd79bba95e318&amp;imgtype=0&amp;src=http%3A%2F%2Fwww.th7.cn%2Fd%2Ffile%2Fp%2F2016%2F06%2F27%2F6f4c4c856cad6007bf9fa6da6c370137.jpg" alt="Vue"><br>在Vue.js的ViewModel中使用directives指令（eg：v-bind，v-text等）对view中的dow进行封装。每一个指令都会对应一个Watcher（观察者）。</p>
+<a id="more"></a>
 <p>Vue.js源代码中使用的是ES5的Object.defineProperty()方法，在此方法中包含set以及get两个函数，</p>
 <ol>
 <li>当Model中的数据发生改变时=&gt;触发set方法=&gt;watcher观察到变化后进行运算，发现重新运算后的值与指令中的原值不一样=&gt;调用指令中的update()方法更新dom视图数据。</li>
@@ -266,6 +267,11 @@
     </a>
   
   
+    <a href="/2017/05/09/前端基础知识补充/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端基础知识补充</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
 </nav>
 
 
@@ -363,15 +369,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">project</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Introduction</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">project</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
             
             <div class="clearfix"></div>

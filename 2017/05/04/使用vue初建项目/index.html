@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://phoebe196.github.io/2017/05/04/使用vue初建项目/index.html">
 <meta property="og:site_name" content="Pb Blog">
 <meta property="og:description" content="本文所有操作都是基于已安装好Node.js和Git命令行的前提下进行的。接触vue框架时间不长，但仍对Vue.js一知半解的，就算看了官方文档也是千头万绪，无从下手，所以我想在此博客下慢慢梳理自己的学习vue经历和知识点。 如何创建一个vue项目1$ npm install -g vue-cli 首先使用vue-cli（vue脚手架工具）搭建一个基本的代码结构 1$ vue init &amp;lt;te">
-<meta property="og:updated_time" content="2017-05-04T06:32:36.023Z">
+<meta property="og:updated_time" content="2017-05-09T10:31:27.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用vue初建项目">
 <meta name="twitter:description" content="本文所有操作都是基于已安装好Node.js和Git命令行的前提下进行的。接触vue框架时间不长，但仍对Vue.js一知半解的，就算看了官方文档也是千头万绪，无从下手，所以我想在此博客下慢慢梳理自己的学习vue经历和知识点。 如何创建一个vue项目1$ npm install -g vue-cli 首先使用vue-cli（vue脚手架工具）搭建一个基本的代码结构 1$ vue init &amp;lt;te">
@@ -166,8 +166,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ vue init &lt;template-name&gt; &lt;project-name&gt;</div></pre></td></tr></table></figure>
 <p>比如vue init webpack eleme 用webpack来创立一个项目名为eleme的项目<br>随后会自动跳出一些信息需要Author自己输入，包括：<br>  项目名、项目描述、作者、eslint（代码风格检查器）、eslint preset（风格预设）：standard、Karma+Mocha(单元测试库)：No、e2e test：No</p>
 <p>进入项目目录下后<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure></p>
-<p>安装依赖，可发现目录下多了node_modules文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
+<p>安装依赖，可发现目录下多了node_modules文件夹<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm run dev</div></pre></td></tr></table></figure></p>
 <p>以上命令可运行该初始项目，默认在8080端口启动，在浏览器输入localhost：8080可查看页面。</p>
 <h2 id="Vue-基础知识"><a href="#Vue-基础知识" class="headerlink" title="Vue 基础知识"></a>Vue 基础知识</h2><p>入口文件是index.html，body里有<code>&lt;app&gt;</code>或<code>&lt;div id=”app”&gt;</code> 为vue的组件，入口js为main.js<br>其中用 new Vue已经实例化vue实例，并且el显示挂载到body上<br>每个组件分为三部分：<code>&lt;template&gt;</code>, <code>&lt;script&gt;</code>,<code>&lt;style&gt;</code> </p>
 <h2 id="添加组件的步骤"><a href="#添加组件的步骤" class="headerlink" title="添加组件的步骤"></a>添加组件的步骤</h2><p>在components目录下创建一个vue文件，在<code>&lt;script&gt;</code>用export default导出一个对象<br>在APP.vue里import引用刚刚导出的对象，用components： {注册组件}=&gt;然后再HTML标签引用</p>
@@ -372,15 +371,27 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">project</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">demo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Introduction</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">project</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
               </li>
             
             <div class="clearfix"></div>
